@@ -1,11 +1,11 @@
 /* General Styles */
 body {
-    font-family: "Arial", sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
   
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
     animation: fadeIn 1s ease-in-out;
     box-sizing: border-box;
@@ -16,8 +16,8 @@ body {
     margin: 0 auto;
   }
   
-  /* Header Styles */
-  header {
+/* Header Styles */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,30 +35,31 @@ body {
     transition: transform 0.3s ease-in-out;
   }
   
-  header .logo img {
-    width: 80px;
-    height: 110px;
-  }
+header .logo img {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+}
   
   header .logo:hover {
     transform: scale(1.1);
   }
-  
+/*   
   header .logo-text {
     margin-left: 10px;
-  }
+  } */
   
-  header .logo-text h1 {
+  /* header .logo-text h1 {
     margin: 0;
     font-size: 1.5em;
     font-weight: bolder;
-  }
+  } */
   
-  header .logo-text p {
+  /* header .logo-text p {
     margin: 0;
     font-size: 0.9em;
     color: #666;
-  }
+  } */
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -77,6 +78,21 @@ body {
   
     header .logo-text p {
       font-size: 0.8em;
+    }
+  
+    nav ul {
+      display: none; /* Hide the menu items */
+    }
+  
+    .menu-btn {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #ff6600;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.2em;
     }
   }
   
@@ -133,9 +149,11 @@ body {
   nav ul li .btn:hover {
     background: #f6f4f2;
   }
+  
   nav {
     margin-top: -2.5rem;
   }
+  
   .get-started {
     padding: 10px 20px;
     background-color: #ff6600;
@@ -144,6 +162,7 @@ body {
     color: #fff;
     cursor: pointer;
   }
+  
   
   /* Hero Section */
   .hero {
@@ -238,7 +257,7 @@ body {
     background-color: rgb(234, 232, 232);
     border-radius: 40px;
     /* border: 2px solid red; */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 50%;
     margin: 20px auto;
     padding: 20px;
@@ -246,6 +265,7 @@ body {
     text-align: center;
     animation-delay: 1.5s;
 }
+
 .highlight {
     color: #FF6600;
 }
@@ -286,8 +306,8 @@ p {
 
 .megaphone-left {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: -10px;
+    left: 20px;
     width: 100px;
     height: auto;
 }
@@ -295,8 +315,9 @@ p {
 .megaphone-right {
     position: absolute;
     top: 10px;
-    right: 10px;
-    width: 100px;
+    bottom:10px;
+    right: -10px;
+    width: 500px; 
     height: auto;
 }
 
@@ -305,10 +326,13 @@ p {
     max-width: 800px;
     margin: 20px auto;
     padding: 50px 20px;
-    background-color: #f8f8f8;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .success-stories .container {
@@ -332,14 +356,26 @@ p {
 }
 
 .story {
+    position: relative; /* Ensure proper positioning of ::after pseudo-element */
     background-color: #fff;
-    border: 1px solid #e0e0e0;
+    /* border: 1px solid #cb3434; */
     border-radius: 10px;
     width: 250px;
     padding: 20px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+}
+.story::after {
+    content: ''; /* Required for ::after pseudo-element */
+    position: absolute;
+    bottom: -10px; /* Adjust this value to control the distance of the border from the card */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Adjust this value to control the thickness of the border */
+    background-color: #080808; /* Use the same color as the border */
+    border-radius: 0 0 10px 10px; /* Ensure rounded corners match the card */
+    z-index: 1; /* Ensure the pseudo-element is behind the card content */
 }
 
 .story:hover {
@@ -348,6 +384,7 @@ p {
 
 .story p {
     font-size: 16px;
+    color: #333;
     line-height: 1.5;
     margin: 10px 0;
 }
@@ -356,7 +393,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
@@ -366,6 +402,14 @@ p {
 
 .learn-more::before {
     content: '↗';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff6600;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
     margin-right: 8px;
 }
 
@@ -576,6 +620,8 @@ p {
     max-width: 100%;
     overflow: hidden;
     margin: 0 auto 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .carousel-inner {
@@ -594,19 +640,25 @@ p {
 .carousel-item img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: #FF6600;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
     font-size: 1.5em;
     z-index: 1000;
+    transition: color 0.3s ease;
+    background: none; /* Remove the background box */
+}
+
+.carousel-control:hover {
+    color: #FF4500; /* Optional: Darker shade for hover effect */
 }
 
 .carousel-control.prev {
@@ -620,14 +672,27 @@ p {
 .team-member {
     text-align: center;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
 }
 
 .team-member img {
-    border-radius: 10%;
+    border-radius: 50%;
     width: 150px;
     height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
 }
 
 .quote {
@@ -639,15 +704,89 @@ p {
 .name {
     font-size: 1.2em;
     color: #FF6600;
+    font-weight: bold;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Ensure each item takes full width */
+    }
+
+    .carousel-control {
+        font-size: 1.2em;
+        padding: 5px 15px;
+    }
+
+    .team-member {
+        padding: 15px;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quote {
+        font-size: 0.9em;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-control {
+        font-size: 1em;
+        padding: 5px 10px;
+    }
+
+    .team-member {
+        padding: 10px;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .quote {
+        font-size: 0.8em;
+    }
+
+    .name {
+        font-size: 0.9em;
+    }
+}
+
+
+
 .connect-section {
-    margin-top: 20px;
+    margin-top: 2vw;
 }
 
 .connect-section h4 {
     font-size: 1.5em;
-    padding-bottom: 5px;
+    padding-bottom: 0.5px;
+    margin-bottom: -1vw;
+}
+
+.contact-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image img {
+    width: 40vw; /* Adjust the width as needed */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    margin-top: 0px; /* Adjust the top margin as needed */
+    margin-right: 1vw; /* Adjust the right margin as needed */
+}
+
+.contact-info {
+    font-size: 1.2em;
 }
 
 @media (max-width: 768px) {
