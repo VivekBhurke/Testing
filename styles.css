@@ -196,11 +196,9 @@ header .logo img {
   }
   
   .hero .btn:hover {
-    background: #eed3b7;
     transform: scale(1.05);
   }
 
-  
   .hero-image {
     width: 100%;
     opacity: 0;
