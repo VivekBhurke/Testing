@@ -162,6 +162,10 @@ header .logo img {
     color: #fff;
     cursor: pointer;
   }
+  .get-started:hover {
+    background-color: #FF6600;
+    transition: background-color 0.3s;
+  }
   
   
   /* Hero Section */
@@ -252,6 +256,7 @@ header .logo img {
 }
 
 .about-section {
+    position: relative; /* Ensure positioning context for absolutely positioned images */
     background-color: rgb(234, 232, 232);
     border-radius: 40px;
     /* border: 2px solid red; */
@@ -275,7 +280,7 @@ header .logo img {
 
 .about-section h1 {
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .about-section h2 {
@@ -304,37 +309,22 @@ p {
 
 .megaphone-left {
     position: absolute;
-    top: -10px;
-    left: 20px;
-    width: 100px;
-    height: auto;
+    top: -20px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 120px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .megaphone-right {
     position: absolute;
-    top: 10px;
-    bottom:10px;
-    right: -10px;
-    width: 500px; 
-    height: auto;
+    top: 10px; /* Adjust as needed */
+    right: -50px; /* Adjust as needed */
+    width: 550px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .success-stories {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 50px 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.success-stories .container {
-    text-align: center;
+    margin-bottom: 40px;
 }
 
 .success-stories h2 {
@@ -343,8 +333,8 @@ p {
     display: inline-block;
     padding: 0.5px 6px;
     border-radius: 5px;
-    margin-bottom: 40px;
     font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .stories-container {
@@ -354,9 +344,9 @@ p {
 }
 
 .story {
-    position: relative; /* Ensure proper positioning of ::after pseudo-element */
+    position: relative;
     background-color: #fff;
-    /* border: 1px solid #cb3434; */
+    border: 1px solid #343434;
     border-radius: 10px;
     width: 250px;
     padding: 20px;
@@ -364,16 +354,36 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
+
 .story::after {
     content: ''; /* Required for ::after pseudo-element */
     position: absolute;
-    bottom: -10px; /* Adjust this value to control the distance of the border from the card */
+    bottom: -7px; /* Adjust this value to control the distance of the border from the card */
     left: 0;
     width: 100%;
     height: 10px; /* Adjust this value to control the thickness of the border */
     background-color: #080808; /* Use the same color as the border */
     border-radius: 0 0 10px 10px; /* Ensure rounded corners match the card */
-    z-index: 1; /* Ensure the pseudo-element is behind the card content */
+    z-index: 0; /* Ensure the pseudo-element is behind the card content */
+}
+
+.bottom-right-image {
+    position: absolute;
+    bottom: -30px; /* Adjust as needed */
+    right: -20px; /* Adjust as needed */
+    width: 60px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure the image overlays the pseudo-element */
+}
+
+.middle-right-image {
+    position: absolute;
+    top: 50%; /* Adjust as needed to position in the middle */
+    right: 256px; /* Adjust as needed */
+    transform: translateY(-50%); /* Adjust to center the image vertically */
+    width: 50px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure the image overlays the pseudo-element */
 }
 
 .story:hover {
@@ -401,21 +411,21 @@ p {
 .learn-more::before {
     content: '↗';
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: #ff6600;
     color: #fff;
     text-align: center;
-    line-height: 20px;
+    line-height: 30px;
     margin-right: 8px;
 }
 
 .story button {
     color: #000000;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 5px 5px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -425,6 +435,7 @@ p {
     background-color: #ff6600;
     color: #fff;
 }
+
 
 /* Animation */
 @keyframes fadeInUp {
@@ -487,6 +498,7 @@ p {
 }
 
 .service-card {
+    position: relative; /* Ensure positioning context for absolutely positioned images */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -497,6 +509,22 @@ p {
     box-sizing: border-box; /* Include padding and border in the width calculation */
     text-align: left;
 }
+.top-right-image {
+    position: absolute;
+    top: -70px; /* Adjust as needed */
+    right: -50px; /* Adjust as needed */
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+}
+
+.bottom-left-image {
+    position: absolute;
+    bottom: -40px; /* Adjust as needed */
+    left: -60px; /* Adjust as needed */
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+}
+
 
 
 /* Different shades of orange for each card */
@@ -505,7 +533,7 @@ p {
 }
 
 .card-2 {
-    background-color: #F3B288; /* DarkOrange */
+    background-color: #F3B288; /* DarkOrange logo */
 }
 
 .card-3 {
@@ -517,7 +545,7 @@ p {
 }
 
 .card-5 {
-    background-color: #F3B288; /* Coral */
+    background-color: #F3B288; /* Coral logo*/
 }
 
 .card-6 {
@@ -767,19 +795,22 @@ p {
 .connect-section h4 {
     font-size: 1.5em;
     padding-bottom: 0.5px;
-    margin-bottom: -1vw;
+    margin-bottom: 7.5px;
+
 }
 
 .contact-image {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contact-image img {
-    width: 40vw; /* Adjust the width as needed */
+    position: absolute;
+    width: 15vw; /* Adjust the width as needed */
     height: auto; /* Automatically adjust height to maintain aspect ratio */
-    margin-top: 0px; /* Adjust the top margin as needed */
+    margin-top: -7px; /* Adjust the top margin as needed */
     margin-right: 1vw; /* Adjust the right margin as needed */
 }
 
@@ -817,7 +848,7 @@ p {
 
 @media (max-width: 768px) {
     .carousel-inner {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .team-member img {
@@ -833,40 +864,6 @@ p {
         font-size: 1.2em;
     }
 }
-
-/* footer {
-    background: #333;
-    color: #fff;
-    padding: 2em 0;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-footer h2 {
-    margin: 0 0 1em;
-}
-
-footer .social-icons {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-footer .social-icons li {
-    margin: 0 10px;
-}
-
-footer .social-icons li a img {
-    width: 20px;
-    height: 20px;
-    border-radius: 90%;
-    transition: transform 0.3s ease-in-out;
-}
-
-footer .social-icons li a img:hover {
-    transform: scale(1.2);
-} */
 
 /* Keyframes for Animations */
 @keyframes fadeIn {
