@@ -45,3 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('nav ul');
+
+    mobileMenuToggle.addEventListener('click', function () {
+        this.classList.toggle('open');
+        mobileMenu.classList.toggle('show');
+    });
+});
+
+  
