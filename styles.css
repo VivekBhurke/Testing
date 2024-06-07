@@ -156,13 +156,12 @@ header .logo img {
 .text {
     position: relative;
 }
-
 .image-container {
     position: absolute;
     top: -3px;
     left: 0;
-    width: 58%; /* Adjust width as needed */
-    height: auto; 
+    width: 58%;
+    height: auto;
     opacity: 1;
     /* z-index: -1; */
 }
@@ -171,7 +170,22 @@ header .logo img {
     position: absolute;
     width: 100%;
     height: auto;
-    /* z-index: -1; */
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        width: 100%;
+        position: absolute;
+        top: -10px;
+        left: 0;
+        /* z-index: -1; */
+    }
+
+    .image-container img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+    }
 }
 .text .digital-Presence {
     font-size: 3em;
@@ -763,6 +777,17 @@ header .logo img {
     opacity: 0;
     animation: fadeInUp 1s ease-in-out forwards;
 }
+.success-stories .story, .services .service, .team  {
+    background: #f4f4f4;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
 
 .success-stories .story:nth-child(1) {
     animation-delay: 2.2s;
@@ -799,6 +824,49 @@ header .logo img {
 .services .service:nth-child(6) {
     animation-delay: 3.7s;
 }
+.team-member{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background: #f4f4f4;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.userinfo{
+    background-color: rgb(226, 223, 223);
+    max-width: 50% ;
+    max-height: 50%;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1em;
+    color: #000000;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.quote-mark {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    background-image: url('icon/quotation-mark.png'); /* Replace 'path/to/your/quotation-mark.png' with the actual path to your image */
+    background-size: cover;
+}
+.userimg{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .team-section {
     padding: 50px 20px;
     text-align: center;
@@ -817,7 +885,7 @@ header .logo img {
 
 .carousel {
     position: relative;
-    max-width: 50%;
+    max-width: 100%;
     overflow: hidden;
     margin: 0 auto 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -840,8 +908,35 @@ header .logo img {
 .carousel-item img {
     width: 100%;
     height: auto;
-    border-radius: 10   px;
+    border-radius: 10px;
 }
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF6600;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1000;
+    transition: color 0.3s ease;
+    background: none; /* Remove the background box */
+}
+
+.carousel-control:hover {
+    color: #FF4500; /* Optional: Darker shade for hover effect */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
 .team-member {
     text-align: center;
     padding: 20px;
@@ -862,18 +957,13 @@ header .logo img {
     object-fit: cover;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
-    float: left;
 }
 
 .team-member img:hover {
     transform: scale(1.1);
 }
 
-.quote {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 10px;
-}
+
 
 .name {
     font-size: 1.2em;
@@ -910,29 +1000,6 @@ header .logo img {
     }
 }
 
-@media (max-width: 480px) {
-    .carousel-control {
-        font-size: 1em;
-        padding: 5px 10px;
-    }
-
-    .team-member {
-        padding: 10px;
-    }
-
-    .team-member img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .quote {
-        font-size: 0.8em;
-    }
-
-    .name {
-        font-size: 0.9em;
-    }
-}
 
 
 
