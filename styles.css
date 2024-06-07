@@ -180,7 +180,7 @@ nav {
   }
 
   header .logo img {
-    width: 100px; /* Smaller logo for mobile */
+    width: 200px; /* Smaller logo for mobile */
   }
 
   nav ul {
@@ -289,7 +289,7 @@ nav {
 @media (max-width: 768px) {
     .image-container {
         width: 60%;
-        top: 2px;
+        top: 5px;
         left: -10px;
     }
 
@@ -357,7 +357,7 @@ nav {
 }
 
 .hero-image img {
-    width: 100%;
+    width: 80%;
     height: auto;
     position: absolute;
 }
@@ -368,15 +368,17 @@ nav {
 }
 
 .hero-image img:nth-child(2) {
+    position: absolute;
     top: 30%; /* Adjust the top position as needed for responsiveness */
-    left: -25%; /* Adjust the left position as needed for responsiveness */
+    left: -20%; /* Adjust the left position as needed for responsiveness */
     width: 25%; /* Adjust the width as needed for responsiveness */
     animation: moveUpDown 1s ease-in-out infinite alternate;
 }
 
 .hero-image img:nth-child(3) {
+    position: absolute;
     top: 80%; /* Adjust the top position as needed for responsiveness */
-    left: 10%; /* Adjust the left position as needed for responsiveness */
+    left: 5%; /* Adjust the left position as needed for responsiveness */
     width: 20%; /* Adjust the width as needed for responsiveness */
     animation: moveUpDown 1s ease-in-out infinite alternate;
 }
@@ -408,6 +410,7 @@ nav {
     .hero-content {
         flex-direction: row;
     }
+    
 }
 
 .hero-content > .text {
@@ -1004,7 +1007,7 @@ nav {
 
 .carousel {
     position: relative;
-    max-width: 100%;
+    max-width: 80%;
     overflow: hidden;
     margin: 0 auto 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1065,9 +1068,9 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.team-member:hover {
+/* .team-member:hover {
     transform: translateY(-10px);
-}
+} */
 
 .team-member img {
     border-radius: 50%;
