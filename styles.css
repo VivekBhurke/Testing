@@ -144,13 +144,35 @@ header .logo img {
     animation: fadeInUp 1s ease-in-out;
   }
   
-  .text h1 {
-    font-size: 3em;
+.text h1 {
+    font-size: 1em;
     line-height: 1; /* Adjust this value for line height */
     color: #333;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
+.text {
+    position: relative;
+}
+
+.image-container {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 58%; /* Adjust width as needed */
+    height: auto; 
+    opacity: 1;
+    /* z-index: -1; */
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    /* z-index: -1; */
+}
 .text .digital-Presence {
     font-size: 3em;
     color: #000000;
@@ -795,7 +817,7 @@ header .logo img {
 
 .carousel {
     position: relative;
-    max-width: 100%;
+    max-width: 50%;
     overflow: hidden;
     margin: 0 auto 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -818,7 +840,7 @@ header .logo img {
 .carousel-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 10   px;
 }
 .team-member {
     text-align: center;
