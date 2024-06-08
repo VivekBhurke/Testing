@@ -661,23 +661,25 @@ nav {
     z-index: 0; /* Ensure the pseudo-element is behind the card content */
 }
 
-.bottom-right-image {
-    position: absolute;
-    bottom: -30px; /* Adjust as needed */
-    right: -20px; /* Adjust as needed */
-    width: 60px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1; /* Ensure the image overlays the pseudo-element */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.middle-right-image {
+.bottom-right-image, .middle-right-image {
     position: absolute;
     bottom: -30px; /* Adjust as needed */
     right: -20px; /* Adjust as needed */
     width: 60px; /* Adjust as needed */
     height: auto; /* Maintain aspect ratio */
     z-index: 1; /* Ensure the image overlays the pseudo-element */
+    animation: rotate 10s linear infinite; /* Rotate infinitely over 5 seconds */
 }
+
 
 .story:hover {
     transform: scale(1.05);
