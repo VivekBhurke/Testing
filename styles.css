@@ -463,7 +463,7 @@ nav {
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 1.8em; /* Adjusted for mobile */
-        
+
     }
 }
 
@@ -996,20 +996,31 @@ nav {
     animation: fadeInUp 1s ease-in-out forwards;
 }
 
+/* User Info */
 .userinfo {
     background-color: rgb(226, 223, 223);
     max-width: 50%;
-    max-height: 50%;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     font-size: 1em;
     color: #000000;
     margin-bottom: 10px;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
+    flex: 1; /* Allow the user info to take up remaining space */
 }
 
+/* User Image */
+.userimg {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: 20px; /* Add margin to the right for spacing */
+}
 .quote-mark {
     position: absolute;
     top: 0;
@@ -1020,15 +1031,8 @@ nav {
     background-size: cover;
 }
 
-.userimg {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .team-section {
-    padding: 50px 20px;
+    padding: 70px 20px; /* Increased padding to shift it down */
     text-align: center;
     background-color: #fff;
 }
@@ -1115,7 +1119,7 @@ nav {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     transition: transform 0.3s ease;
 }
 
