@@ -3,6 +3,7 @@
     font-family: 'Montserrat';
     src: url('font/Montserrat-VariableFont_wght') format('truetype');
 }
+/* Base styles */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -13,9 +14,10 @@ body {
     animation: fadeIn 1s ease-in-out;
     box-sizing: border-box;
     overflow-x: hidden; /* Prevent horizontal scroll */
+}
 
-  }
-  html {
+/* Smooth scrolling for anchor links */
+html {
     scroll-behavior: smooth;
 }
 /* Base Styles */
@@ -26,6 +28,7 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 
 }
+
 /* Mobile Menu Styles */
 .mobile-menu-toggle {
     display: none; /* Hide the toggle button by default on larger screens */
@@ -177,11 +180,12 @@ nav {
 
   header .logo {
     margin-bottom: 10px;
+    
   }
 
   header .logo img {
-    width: 200px; /* Smaller logo for mobile */
-  }
+    width: 20em; /* Smaller logo for mobile */
+}
 
   nav ul {
     display: none; /* Hide the menu items by default */
@@ -382,7 +386,39 @@ nav {
     width: 20%; /* Adjust the width as needed for responsiveness */
     animation: moveUpDown 1s ease-in-out infinite alternate;
 }
+/* Responsive styles for screens up to 768px */
+@media (max-width: 768px) {
+    .hero-image img {
+        width: 50%; /* Adjust the width for smaller screens */
+        height: auto;
+    }
 
+    .hero-image img:first-child {
+        width: 100%;
+    }
+
+    .hero-image img:nth-child(2) {
+        top: 11em; /* Adjust the top position for smaller screens */
+        left: -1em; /* Adjust the left position for smaller screens */
+        width: 5em; /* Adjust the width for smaller screens */
+    }
+
+    .hero-image img:nth-child(3) {
+        top: 20em; /* Adjust the top position for smaller screens */
+        left: 5em; /* Adjust the left position for smaller screens */
+        width: 5em; /* Adjust the width for smaller screens */
+    }
+}
+
+/* Keyframes for moveUpDown animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
 
 @keyframes moveUpDown {
     0% {
@@ -555,16 +591,16 @@ nav {
 
 @media (max-width: 600px) {
     .megaphone-left {
-        top: -10px;
-        left: 10px;
-        width: 100px;
+        top: -10em;
+        left: 1.9em;
+        width: 7em;
         animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out;
     }
 
     .megaphone-right {
-        top: 25px;
-        right: -10px;
-        width: 450px;
+        top: 1em;
+        right: -2em;
+        width: 30em;
         /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
     }
 
@@ -1094,6 +1130,7 @@ nav {
 }
 .name:hover {
     color: #ff6600;
+    cursor: pointer;
 }
 
 /* Responsive Design */
