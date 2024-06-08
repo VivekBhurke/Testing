@@ -1001,6 +1001,7 @@ nav {
     background-color: rgb(226, 223, 223);
     max-width: 50%;
     border-radius: 10px;
+    margin-right: 12%;
     padding: 10px;
     font-size: 1em;
     color: #000000;
@@ -1024,7 +1025,7 @@ nav {
 .quote-mark {
     position: absolute;
     top: 0;
-    right: 5%;
+    right: 13%;
     width: 40px; /* Adjust size as needed */
     height: 40px;
     background-image: url('icon/quotation-mark.png'); /* Replace 'path/to/your/quotation-mark.png' with the actual path to your image */
@@ -1049,7 +1050,7 @@ nav {
 
 .carousel {
     position: relative;
-    max-width: 80%;
+    max-width: 70%;
     overflow: hidden;
     margin: 0 auto 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
