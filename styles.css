@@ -38,6 +38,8 @@ html {
     .container {
       overflow-y: hidden;
         flex-direction: row;
+        padding: 1em 0;
+
     } /* Disable vertical scrollbar on mobile screens */
     * {
 
@@ -320,9 +322,9 @@ nav {
 
 .image-container {
     position: absolute;
-    top: 10px;
-    left: -18px;
-    width: 46%;
+    top: 0em;
+    left: -1em;
+    width: 21em;
     height: auto;
     opacity: 1;
 }
@@ -443,15 +445,16 @@ nav {
     }
 
     .hero-image img:nth-child(2) {
-        top: 7em; /* Adjust the top position for smaller screens */
-        left: -1.5em; /* Adjust the left position for smaller screens */
-        width: 5em; /* Adjust the width for smaller screens */
+        top: 12em; /* Adjust the top position for smaller screens */
+        left: -0.01em; /* Adjust the left position for smaller screens */
+        width: 4.3em; /* Adjust the width for smaller screens */
     }
 
     .hero-image img:nth-child(3) {
         top: 22em; /* Adjust the top position for smaller screens */
         left: 5em; /* Adjust the left position for smaller screens */
         width: 5em; /* Adjust the width for smaller screens */
+        z-index: 1;
     }
 }
 
@@ -582,7 +585,7 @@ nav {
 
 .about-section p {
     font-size: 1em;
-    color: #666;
+    color: #000000;
     line-height: 1.75;
 }
 
@@ -593,7 +596,7 @@ nav {
     right: -20px;
     bottom: -20px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
 .megaphone-left {
@@ -608,21 +611,39 @@ nav {
 
 .megaphone-right {
     position: absolute;
-    top: -1em;
-    right: 5em;
-    width: 50em;
+    top: -0.1em;
+    right: 23em;
+    width: 45em;
     height: auto;
     z-index: -1;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
+    .megaphone-left {
+        top: -10em;
+        left: 1em;
+        width: 5em;
+        animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out;
+    }
+
+    .megaphone-right {
+        top: 4.1em;
+        left: 3em;
+        width: 23em;
+        z-index: 1;
+        /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
+    }
+
     .about-section {
-        width: 50%;
-        padding: 5px;
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
     }
 
     .about-section h1 {
         font-size: 1.5em;
+        z-index: 1;
     }
 
     .about-section h2 {
@@ -631,42 +652,6 @@ nav {
 
     .about-section p {
         font-size: 0.9em;
-    }
-}
-
-@media (max-width: 768px) {
-    .megaphone-left {
-        top: -10em;
-        left: 1.9em;
-        width: 5em;
-        animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out;
-    }
-
-    .megaphone-right {
-        top: 2.3em;
-        left: 4em;
-        width: 24em;
-        z-index: 1;
-        /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
-    }
-
-    .about-section {
-        width: 100%;
-        margin: 10px auto;
-        padding: 10px;
-    }
-
-    .about-section h1 {
-        font-size: 1.2em;
-        z-index: -1;
-    }
-
-    .about-section h2 {
-        font-size: 1em;
-    }
-
-    .about-section p {
-        font-size: 0.8em;
     }
 }
 
@@ -698,6 +683,7 @@ nav {
         top: 15px;
     }
 }
+
 
 .success-stories {
     margin-bottom: 40px;
@@ -775,7 +761,7 @@ nav {
 }
 
 .story p {
-    font-size: 18px;
+    font-size: 20px;
     color: #000000;
     line-height: 1.5;
     margin: 10px 0;
@@ -788,7 +774,8 @@ nav {
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
-    font-weight: bold;
+    /* font-size: -15px; */
+    font-weight: bolder;
     transition: background-color 0.3s;
 }
 
@@ -946,7 +933,7 @@ nav {
     }
 }
 /* Mobile view adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .services-section h2 {
         font-size: 1.6em;
         flex-shrink: calc(100% - 20px);
@@ -954,11 +941,12 @@ nav {
     }
 
     .services-section h3 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .service-card {
         flex: 0 0 100%;
+        /* flex-shrink: calc(100% - 20px); */
     }
 
     .top-right-image {
@@ -967,8 +955,9 @@ nav {
     }
 
     .top-left-image {
+        top: 1em;
         bottom: 15em;
-        left: -3.5em;
+        left: -2em;
         width: 3em;
     }
 }
@@ -1089,6 +1078,7 @@ nav {
     height: 40px;
     background-image: url('icon/quotation-mark.png'); /* Replace 'path/to/your/quotation-mark.png' with the actual path to your image */
     background-size: cover;
+    opacity: 0.7;
 }
 
 /* Team Section */
@@ -1320,9 +1310,9 @@ nav {
         margin-bottom: -1em;
     }
     .quote-mark {
-        top: 1em;
-        right: 13%;
-       
+        top: 1.0em;
+        right: 0.5em;
+       opacity: 0.6;
 
     }
   
