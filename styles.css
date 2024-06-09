@@ -26,8 +26,18 @@ html {
   margin: 0 auto;
   padding: 0 20px;
   overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: hidden; 
 
 }
+@media (max-width: 767px) { /* Adjust the max-width as needed for your mobile breakpoint */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
+        max-width: 100%;
+    }
+    .container {
+      overflow-y: hidden; /* Disable vertical scrollbar on mobile screens */
+    }
+  }
 
 /* Mobile Menu Styles */
 .mobile-menu-toggle {
@@ -68,15 +78,17 @@ html {
     nav ul {
       display: none; /* Hide the menu items by default */
       flex-direction: column;
-      width: 100%;
+      width: 10%;
       text-align: center;
       background-color: #fff;
+      border-radius:20px;
       position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      padding: 20px 0;
+      top: 10px; /* Adjust based on header height */
+      left: 10px;
+      padding: 10px 0; /* Decreased padding */
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       z-index: 999;
+      animation: slide-down 0.3s ease-in-out; /* Added animation */
     }
     
     nav ul.show {
@@ -87,6 +99,27 @@ html {
       margin: 10px 0;
     }
   }
+  
+  /* Centering the inner content */
+  nav ul li a {
+    display: block;
+    padding: 10px; /* Decreased padding */
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Animation for sliding down */
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 /* Header Styles */
 header {
   display: flex;
@@ -670,6 +703,10 @@ nav {
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
+    padding-bottom: 15px;
+    overflow-y: hidden; /* Disable vertical scrollbar */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+
 }
 
 .story {
@@ -715,7 +752,6 @@ nav {
     z-index: 1; /* Ensure the image overlays the pseudo-element */
     animation: rotate 10s linear infinite; /* Rotate infinitely over 5 seconds */
 }
-
 
 .story:hover {
     transform: scale(1.05);
@@ -768,6 +804,7 @@ nav {
     background-color: #ff6600;
     color: #fff;
 }
+
 
 .services {
     animation-delay: 2.5s;
@@ -981,6 +1018,7 @@ nav {
 .services .service:nth-child(6) {
     animation-delay: 3.7s;
 }
+/* Team Member */
 .team-member {
     display: flex;
     justify-content: center;
@@ -990,7 +1028,6 @@ nav {
     padding: 1em;
     margin: 1em 0;
     border-radius: 8px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     transform: translateY(20px);
     opacity: 0;
     animation: fadeInUp 1s ease-in-out forwards;
@@ -1022,6 +1059,7 @@ nav {
     margin-top: 50px;
     margin-right: 20px; /* Add margin to the right for spacing */
 }
+
 .quote-mark {
     position: absolute;
     top: 0;
@@ -1032,6 +1070,7 @@ nav {
     background-size: cover;
 }
 
+/* Team Section */
 .team-section {
     padding: 70px 20px; /* Increased padding to shift it down */
     text-align: center;
@@ -1048,6 +1087,7 @@ nav {
     margin-bottom: 40px;
 }
 
+/* Carousel */
 .carousel {
     position: relative;
     max-width: 70%;
@@ -1106,14 +1146,9 @@ nav {
     text-align: center;
     padding: 20px;
     background-color: #fff;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
-
-/* .team-member:hover {
-    transform: translateY(-10px);
-} */
 
 .team-member img {
     border-radius: 50%;
@@ -1133,38 +1168,10 @@ nav {
     color: #000000;
     font-weight: bold;
 }
+
 .name:hover {
     color: #ff6600;
     cursor: pointer;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex: 0 0 100%; /* Ensure each item takes full width */
-    }
-
-    .carousel-control {
-        font-size: 1.2em;
-        padding: 5px 15px;
-    }
-
-    .team-member {
-        padding: 15px;
-    }
-
-    .team-member img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .quote {
-        font-size: 0.9em;
-    }
-
-    .name {
-        font-size: 1em;
-    }
 }
 
 .connect-section {
@@ -1193,27 +1200,8 @@ nav {
     transform: translateY(-50%); /* Offset the image vertically to center it */
 }
 
-
 .contact-info {
     font-size: 1.2em;
-}
-
-@media (max-width: 768px) {
-    .carousel-control {
-        font-size: 1.2em;
-        padding: 8px;
-    }
-
-    .carousel-item img {
-        object-fit: cover;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-control {
-        font-size: 1em;
-        padding: 5px;
-    }
 }
 
 .social-icons a {
@@ -1225,25 +1213,6 @@ nav {
 
 .social-icons a:hover {
     color: #ff6600;
-}
-
-@media (max-width: 768px) {
-    .carousel-inner {
-        flex-direction: row;
-    }
-
-    .team-member img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .carousel-control {
-        font-size: 1em;
-    }
-
-    .social-icons a {
-        font-size: 1.2em;
-    }
 }
 
 /* Keyframes for Animations */
@@ -1314,6 +1283,32 @@ nav {
         max-width: 100%;
         margin: 1em 0;
     }
+
+    .carousel-control {
+        font-size: 1.2em;
+        padding: 5px 15px;
+    }
+
+    .team-member {
+        padding: 15px;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quote {
+        font-size: 0.9em;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+
+    .social-icons a {
+        font-size: 1.2em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1331,5 +1326,19 @@ nav {
 
     nav ul li {
         margin-right: 0;
+    }
+
+    .carousel-control {
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .carousel-control {
+        font-size: 1em;
     }
 }
