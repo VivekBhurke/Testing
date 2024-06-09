@@ -943,6 +943,8 @@ nav {
 @media (max-width: 600px) {
     .services-section h2 {
         font-size: 2em;
+        flex-shrink: calc(100% - 20px);
+        
     }
 
     .services-section h3 {
@@ -959,9 +961,9 @@ nav {
     }
 
     .top-left-image {
-        bottom: 27em;
-        left: -3.3em;
-        width: 5em;
+        bottom: 15em;
+        left: -3.5em;
+        width: 3em;
     }
 }
 
@@ -1276,7 +1278,7 @@ nav {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -1304,6 +1306,9 @@ nav {
 
     .team-member {
         padding: 15px;
+        flex-direction: column;
+        
+
     }
 
     .team-member img {
