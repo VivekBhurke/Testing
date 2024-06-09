@@ -608,9 +608,9 @@ nav {
 
 .megaphone-right {
     position: absolute;
-    top: 5px;
-    right: 230px;
-    width: 700px;
+    top: -1em;
+    right: 5em;
+    width: 50em;
     height: auto;
     z-index: -1;
 }
@@ -837,7 +837,7 @@ nav {
 }
 
 .services-section h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     font-family: 'Perfect Beloved', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: -30px;
     color: #000;
@@ -948,7 +948,7 @@ nav {
 /* Mobile view adjustments */
 @media (max-width: 600px) {
     .services-section h2 {
-        font-size: 2em;
+        font-size: 1.6em;
         flex-shrink: calc(100% - 20px);
         
     }
@@ -974,7 +974,7 @@ nav {
 }
 
 .siegethemoment {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -1316,9 +1316,16 @@ nav {
     .team-member {
         padding: 15px;
         flex-direction: row;
+        margin-top: -1em;
+        margin-bottom: -1em;
+    }
+    .quote-mark {
+        top: 1em;
+        right: 13%;
+       
 
     }
-
+  
     .team-member img {
         width: 10em;
         height: 10em;
