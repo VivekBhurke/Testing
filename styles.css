@@ -1173,7 +1173,11 @@ nav {
 .team-member img:hover {
     transform: scale(1.1);
 }
-
+.quote {
+    font-size: 1.2em;
+    color: #000000;
+    font-weight: lighter;
+}
 .name {
     font-size: 1.2em;
     color: #000000;
@@ -1322,7 +1326,7 @@ nav {
     }
 
     .quote {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .name {
