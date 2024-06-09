@@ -40,8 +40,7 @@ html {
         flex-direction: row;
     } /* Disable vertical scrollbar on mobile screens */
     * {
-        margin: 0;
-        padding: 0;
+
         box-sizing: border-box;
     }
     }
@@ -334,9 +333,9 @@ nav {
 
 @media (max-width: 768px) {
     .image-container {
-        width: 60%;
-        top: 5px;
-        left: -10px;
+        width: 16em;
+        top: 0.5em;
+        left: -1em;
     }
 
     .text h1 {
@@ -355,7 +354,7 @@ nav {
 
 @media (max-width: 768px) {
     .text .digital-Presence {
-        font-size: 2em; /* Adjusted for mobile */
+        font-size: 1em; /* Adjusted for mobile */
     }
 }
 
@@ -431,8 +430,9 @@ nav {
 /* Responsive styles for screens up to 768px */
 @media (max-width: 768px) {
     .hero-image img {
-        width: 60%; /* Adjust the width for smaller screens */
+        width: 100%; /* Adjust the width for smaller screens */
         height: auto;
+        margin-bottom: 5em;
     }
 
     .hero-image img:first-child {
@@ -440,13 +440,13 @@ nav {
     }
 
     .hero-image img:nth-child(2) {
-        top: 11em; /* Adjust the top position for smaller screens */
-        left: -1em; /* Adjust the left position for smaller screens */
+        top: 7em; /* Adjust the top position for smaller screens */
+        left: -1.5em; /* Adjust the left position for smaller screens */
         width: 5em; /* Adjust the width for smaller screens */
     }
 
     .hero-image img:nth-child(3) {
-        top: 20em; /* Adjust the top position for smaller screens */
+        top: 22em; /* Adjust the top position for smaller screens */
         left: 5em; /* Adjust the left position for smaller screens */
         width: 5em; /* Adjust the width for smaller screens */
     }
@@ -640,8 +640,8 @@ nav {
     }
 
     .megaphone-right {
-        top: 1em;
-        right: 0.7em;
+        top: 1.5em;
+        right: -2em;
         width: 28em;
         /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
     }
@@ -833,7 +833,7 @@ nav {
 .services-section h2 {
     font-size: 2.5em;
     font-family: 'Perfect Beloved', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-bottom: -40px;
+    margin-bottom: -30px;
     color: #000;
 }
 
@@ -886,6 +886,7 @@ nav {
     width: 100px;
     height: auto;
 }
+
 
 /* Different shades of orange for each card */
 .card-1 {
@@ -953,15 +954,14 @@ nav {
     }
 
     .top-right-image {
-        top: -35px;
-        right: -25px;
-        width: 75px;
+        top: -3em;
+        width: 7em;
     }
 
     .top-left-image {
-        bottom: 70px;
-        left: -35px;
-        width: 50px;
+        bottom: 27em;
+        left: -3.3em;
+        width: 5em;
     }
 }
 
