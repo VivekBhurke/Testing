@@ -5,7 +5,7 @@
 }
 
 /* Base styles */
-body {
+html,body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
@@ -138,11 +138,12 @@ header {
 header .logo {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
 header .logo img {
-  width: 300px;
+  width: 20em;
   height: auto;
   margin-right: 10px;
 }
@@ -217,13 +218,14 @@ nav {
   }
 
   header .logo {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     
   }
 
   header .logo img {
-    width: 20em; /* Smaller logo for mobile */
-    margin-bottom: 50px; /* Adjust margin to move image slightly up */
+    width: 15em; /* Smaller logo for mobile */
+    margin-top: -2.2em; /* Adjust margin to move image slightly up */
+    margin-left: -9em;
 
 }
 
@@ -257,7 +259,7 @@ nav {
   }
 
   header .logo img {
-    width: 150px; /* Adjust logo size for medium screens */
+    width: 100px; /* Adjust logo size for medium screens */
 
   }
 
@@ -306,7 +308,8 @@ nav {
 }
 
 .text h1 {
-    font-size: 2.5em; /* Adjusted for better readability */
+    font-size: 3.5em; /* Adjusted for better readability */
+    font: bold 3.5em 'Montserrat', sans-serif;
     line-height: 1.2; /* Adjusted line height */
     color: #000000;
     margin-bottom: 2rem; /* Adjusted margin */
@@ -339,13 +342,13 @@ nav {
     }
 
     .text h1 {
-        font-size: 1.8em; /* Smaller font size for mobile */
+        font-size: 2em; /* Smaller font size for mobile */
         margin-bottom: 1rem; /* Adjusted margin for mobile */
     }
 }
 
 .text .digital-Presence {
-    font-size: 3em;
+    font-size: 1em;
     color: #000000;
     display: block;
     line-height: 1.2; /* Adjusted line height */
@@ -631,18 +634,19 @@ nav {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .megaphone-left {
         top: -10em;
         left: 1.9em;
-        width: 7em;
+        width: 5em;
         animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out;
     }
 
     .megaphone-right {
-        top: 1.5em;
-        right: -2em;
-        width: 28em;
+        top: 2.3em;
+        left: 4em;
+        width: 24em;
+        z-index: 1;
         /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
     }
 
@@ -654,6 +658,7 @@ nav {
 
     .about-section h1 {
         font-size: 1.2em;
+        z-index: -1;
     }
 
     .about-section h2 {
@@ -693,6 +698,7 @@ nav {
         top: 15px;
     }
 }
+
 .success-stories {
     margin-bottom: 40px;
 }
@@ -1298,7 +1304,10 @@ nav {
         max-width: 100%;
         margin: 1em 0;
     }
-
+    .carousel{
+        max-width: 100%;
+        
+    }
     .carousel-control {
         font-size: 1.2em;
         padding: 5px 15px;
@@ -1306,8 +1315,7 @@ nav {
 
     .team-member {
         padding: 15px;
-        flex-direction: column;
-        
+        flex-direction: row;
 
     }
 
