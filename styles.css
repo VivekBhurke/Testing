@@ -3,6 +3,7 @@
     font-family: 'Montserrat';
     src: url('font/Montserrat-VariableFont_wght') format('truetype');
 }
+
 /* Base styles */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -35,91 +36,96 @@ html {
         max-width: 100%;
     }
     .container {
-      overflow-y: hidden; /* Disable vertical scrollbar on mobile screens */
+      overflow-y: hidden;
+        flex-direction: row;
+    } /* Disable vertical scrollbar on mobile screens */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-  }
+    }
 
-/* Mobile Menu Styles */
-.mobile-menu-toggle {
-    display: none; /* Hide the toggle button by default on larger screens */
-  }
-  
-  /* Show the toggle button only on mobile */
-  @media (max-width: 768px) {
     .mobile-menu-toggle {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 9999;
+        display: none; /* Hide the toggle button by default on larger screens */
     }
     
-    .mobile-menu-toggle .bar {
-      width: 25px;
-      height: 3px;
-      background-color: #000;
-      margin: 5px 0;
-      transition: transform 0.3s ease-in-out;
+    /* Show the toggle button only on mobile */
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    
+        .mobile-menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            margin: 5px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .mobile-menu-toggle.open .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+    
+        .mobile-menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .mobile-menu-toggle.open .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    
+        nav ul {
+            display: none; /* Hide the menu items by default */
+            flex-direction: column;
+            width: 90%; /* Adjusted width to take most of the screen */
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px; /* Adjust based on header height */
+            left: 5%;
+            padding: 10px 0; /* Decreased padding */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            animation: slide-down 0.3s ease-in-out; /* Added animation */
+        }
+    
+        nav ul.show {
+            display: flex; /* Show the menu items when toggled */
+        }
+    
+        nav ul li {
+            margin: 10px 0;
+        }
+    
+        /* Centering the inner content */
+        nav ul li a {
+            display: block;
+            padding: 10px; /* Decreased padding */
+            text-align: center;
+            width: 100%;
+        }
+    
+        /* Animation for sliding down */
+        @keyframes slide-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     }
     
-    .mobile-menu-toggle.open .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .mobile-menu-toggle.open .bar:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .mobile-menu-toggle.open .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
-    nav ul {
-      display: none; /* Hide the menu items by default */
-      flex-direction: column;
-      width: 10%;
-      text-align: center;
-      background-color: #fff;
-      border-radius:20px;
-      position: absolute;
-      top: 10px; /* Adjust based on header height */
-      left: 10px;
-      padding: 10px 0; /* Decreased padding */
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-      animation: slide-down 0.3s ease-in-out; /* Added animation */
-    }
-    
-    nav ul.show {
-      display: flex; /* Show the menu items when toggled */
-    }
-    
-    nav ul li {
-      margin: 10px 0;
-    }
-  }
-  
-  /* Centering the inner content */
-  nav ul li a {
-    display: block;
-    padding: 10px; /* Decreased padding */
-    text-align: center;
-    width: 100%;
-  }
-  
-  /* Animation for sliding down */
-  @keyframes slide-down {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
 /* Header Styles */
 header {
   display: flex;
@@ -218,6 +224,8 @@ nav {
 
   header .logo img {
     width: 20em; /* Smaller logo for mobile */
+    margin-bottom: 50px; /* Adjust margin to move image slightly up */
+
 }
 
   nav ul {
@@ -250,7 +258,8 @@ nav {
   }
 
   header .logo img {
-    width: 200px; /* Adjust logo size for medium screens */
+    width: 150px; /* Adjust logo size for medium screens */
+
   }
 
   nav ul li {
@@ -422,7 +431,7 @@ nav {
 /* Responsive styles for screens up to 768px */
 @media (max-width: 768px) {
     .hero-image img {
-        width: 50%; /* Adjust the width for smaller screens */
+        width: 60%; /* Adjust the width for smaller screens */
         height: auto;
     }
 
@@ -605,8 +614,8 @@ nav {
 
 @media (max-width: 768px) {
     .about-section {
-        width: 90%;
-        padding: 10px;
+        width: 50%;
+        padding: 5px;
     }
 
     .about-section h1 {
@@ -632,8 +641,8 @@ nav {
 
     .megaphone-right {
         top: 1em;
-        right: 0.5em;
-        width: 30em;
+        right: 0.7em;
+        width: 28em;
         /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
     }
 
@@ -924,7 +933,11 @@ nav {
     font-size: 1em;
     color: #000000;
 }
-
+@media (min-width: 600px) {
+    .services-container {
+        flex-direction: row;
+    }
+}
 /* Mobile view adjustments */
 @media (max-width: 600px) {
     .services-section h2 {
