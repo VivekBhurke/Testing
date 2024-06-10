@@ -6,7 +6,7 @@
 
 /* Base styles */
 html,body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -45,11 +45,10 @@ html,body {
     }
 
     .mobile-menu-toggle {
-        display: none; /* Hide the toggle button by default on larger screens */
+        display: none; 
     }
-    
-    /* Show the toggle button only on mobile */
-    @media (max-width: 768px) {
+
+   /* @media (max-width: 768px) {
         .mobile-menu-toggle {
             display: block;
             position: absolute;
@@ -58,7 +57,7 @@ html,body {
             cursor: pointer;
             z-index: 9999;
         }
-    
+
         .mobile-menu-toggle .bar {
             width: 25px;
             height: 3px;
@@ -66,52 +65,50 @@ html,body {
             margin: 5px 0;
             transition: transform 0.3s ease-in-out;
         }
-    
+
         .mobile-menu-toggle.open .bar:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
         }
-    
+
         .mobile-menu-toggle.open .bar:nth-child(2) {
             opacity: 0;
         }
-    
+
         .mobile-menu-toggle.open .bar:nth-child(3) {
             transform: rotate(45deg) translate(-5px, -6px);
         }
-    
+
         nav ul {
-            display: none; /* Hide the menu items by default */
+            display: none; 
             flex-direction: column;
-            width: 90%; /* Adjusted width to take most of the screen */
+            width: 90%; 
             text-align: center;
             background-color: #fff;
             border-radius: 20px;
             position: absolute;
-            top: 10px; /* Adjust based on header height */
+            top: 10px; 
             left: 5%;
-            padding: 10px 0; /* Decreased padding */
+            padding: 10px 0; 
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 999;
-            animation: slide-down 0.3s ease-in-out; /* Added animation */
+            animation: slide-down 0.3s ease-in-out; 
         }
-    
+
         nav ul.show {
-            display: flex; /* Show the menu items when toggled */
+            display: flex; 
         }
-    
+
         nav ul li {
             margin: 10px 0;
         }
-    
-        /* Centering the inner content */
+
         nav ul li a {
             display: block;
-            padding: 10px; /* Decreased padding */
+            padding: 10px; 
             text-align: center;
             width: 100%;
         }
-    
-        /* Animation for sliding down */
+
         @keyframes slide-down {
             0% {
                 opacity: 0;
@@ -122,8 +119,7 @@ html,body {
                 transform: translateY(0);
             }
         }
-    }
-    
+    } */
 /* Header Styles */
 header {
   display: flex;
@@ -223,8 +219,9 @@ nav {
 
   header .logo img {
     width: 15em; /* Smaller logo for mobile */
-    margin-top: -2.2em; /* Adjust margin to move image slightly up */
-    margin-left: -7em;
+    margin-top: -2.2em;
+    /* margin-left: -3em; */
+    align-items: center;
 
 }
 
@@ -341,7 +338,7 @@ nav {
     }
 
     .text h1 {
-        font-size: 2em; /* Smaller font size for mobile */
+        font-size: 5em; /* Smaller font size for mobile */
         margin-bottom: 1rem; /* Adjusted margin for mobile */
     }
 }
@@ -356,7 +353,7 @@ nav {
 
 @media (max-width: 768px) {
     .text .digital-Presence {
-        font-size: 1em; /* Adjusted for mobile */
+        font-size: 0.5em; /* Adjusted for mobile */
     }
 }
 
@@ -419,7 +416,7 @@ nav {
     top: 30%; /* Adjust the top position as needed for responsiveness */
     left: -20%; /* Adjust the left position as needed for responsiveness */
     width: 25%; /* Adjust the width as needed for responsiveness */
-    animation: moveUpDown 1s ease-in-out infinite alternate;
+    animation: moveUpDown 1s ease-in-out infinite alternate, blurEffect 1s ease-in-out infinite alternate;
 }
 
 .hero-image img:nth-child(3) {
@@ -427,8 +424,9 @@ nav {
     top: 80%; /* Adjust the top position as needed for responsiveness */
     left: 5%; /* Adjust the left position as needed for responsiveness */
     width: 20%; /* Adjust the width as needed for responsiveness */
-    animation: moveUpDown 1s ease-in-out infinite alternate;
+    animation: moveUpDown 1s ease-in-out infinite alternate, blurEffect 1s ease-in-out infinite alternate;
 }
+
 /* Responsive styles for screens up to 768px */
 @media (max-width: 768px) {
     .hero-image img {
@@ -450,7 +448,7 @@ nav {
     .hero-image img:nth-child(3) {
         top: 22em; /* Adjust the top position for smaller screens */
         left: 5em; /* Adjust the left position for smaller screens */
-        width: 5em; /* Adjust the width for smaller screens */
+        width: 10em; /* Adjust the width for smaller screens */
         z-index: 1;
     }
 }
@@ -465,12 +463,13 @@ nav {
     }
 }
 
-@keyframes moveUpDown {
-    0% {
-        transform: translateY(0);
+/* Keyframes for blur effect */
+@keyframes blurEffect {
+    0%, 100% {
+        filter: blur(0px);
     }
-    100% {
-        transform: translateY(-10px);
+    50% {
+        filter: blur(5px);
     }
 }
 
@@ -508,7 +507,6 @@ nav {
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 1.8em; /* Adjusted for mobile */
-
     }
 }
 
@@ -536,6 +534,7 @@ nav {
     font-size: 19px;
     /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
 }
+
 /* Responsive styles for extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
     .text h1 {
@@ -568,14 +567,14 @@ nav {
     }
 
     .hero-image img:nth-child(2) {
-        top: 10em; /* Adjust the top position for very small screens */
-        left: -0.5em; /* Adjust the left position for very small screens */
+        top: 12em; /* Adjust the top position for very small screens */
+        left: -0.1em; /* Adjust the left position for very small screens */
         width: 4em; /* Adjust the width for very small screens */
     }
 
     .hero-image img:nth-child(3) {
-        top: 18em; /* Adjust the top position for very small screens */
-        left: 4em; /* Adjust the left position for very small screens */
+        top: 20em; /* Adjust the top position for very small screens */
+        left: 17em; /* Adjust the left position for very small screens */
         width: 4.5em; /* Adjust the width for very small screens */
     }
 }
@@ -646,7 +645,7 @@ nav {
     width: 150px;
     height: auto;
     z-index: 1;
-    animation: moveUpDownLeft 2s infinite alternate ease-in-out;
+    animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
 }
 .images2 {
     position: absolute;
@@ -667,19 +666,19 @@ nav {
     z-index: -1;
 }
 /* Responsive Design */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 480px){
     .megaphone-left {
         top: -4em;
         left: 2em;
         width: 7em;
-        animation: moveUpDownLeftTablet 1.5s infinite alternate ease-in-out;
+        animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
     }
 
     .megaphone-right {
         top: -0.1em;
-        right: 15em;
-        margin-left: 38rem;
-        width: 35em;
+        right: 26em;
+        margin-left: 23rem;
+        width: 34em;
         z-index: 0;
     }
 
@@ -708,7 +707,7 @@ nav {
         top: -10em;
         left: 1em;
         width: 5em;
-        animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out;
+        animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
     }
 /*
     .megaphone-right {
@@ -727,9 +726,9 @@ nav {
     } */
 
     .megaphone-right {
-        margin-top: 2.5rem;
-        /* left: -4rem; */
-        margin-left: 34rem;
+        margin-top: 2.3rem;
+        left: -2rem;
+        margin-left: 13rem;
         width: 23rem;
         z-index: 1;
         /* animation: moveUpDownRightMobile 2s infinite alternate ease-in-out; */
@@ -782,6 +781,15 @@ nav {
         top: 15px;
     }
 }
+/* Keyframes for blur effect */
+@keyframes blurEffect {
+    0%, 100% {
+        filter: blur(0px);
+    }
+    50% {
+        filter: blur(5px);
+    }
+}
 
 
 .success-stories {
@@ -789,7 +797,7 @@ nav {
 }
 
 .success-stories h2 {
-    background-color: #FF6600;
+    background-color: #c85305;
     color: #fff;
     display: inline-block;
     padding: 0.5px 6px;
@@ -812,12 +820,12 @@ nav {
 .story {
     position: relative;
     background-color: #fff;
-    border: 1px solid #343434;
+    border: 1px solid #000000;
     border-radius: 10px;
     width: 250px;
     padding: 20px;
     margin: 10px;
-    flex: 0 0 calc(40% - 40px);
+    flex: 0 0 calc(40% - 30px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
@@ -879,7 +887,8 @@ nav {
 }
 
 .learn-more::before {
-    content: '↗';
+    content: '➔';
+    transform: rotate(-45deg);
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -897,6 +906,7 @@ nav {
     padding: 5px 5px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: transparent; /* Change background color to transparent on hover */
     transition: background-color 0.3s;
 }
 
@@ -980,13 +990,13 @@ nav {
 }
 
 @font-face {
-    font-family: 'Perfect Beloved';
-    src: url('font/Perfect Beloved.ttf') format('truetype');
+    font-family: 'only_you';
+    src: url('font/only_you_3/OnlyYou.ttf') format('truetype');
 }
 
 .services-section h2 {
     font-size: 3em;
-    font-family: 'Perfect Beloved', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'only_you';
     margin-bottom: -30px;
     color: #000;
 }
@@ -996,8 +1006,8 @@ nav {
     background-color: #FF6600;
     color: #000000;
     display: inline-block;
-    padding: 5px 10px; /* Adjusted padding for better spacing */
-    border-radius: 5px;
+    padding: -3px 3px; /* Adjusted padding for better spacing */
+    border-radius: 3px;
     margin-bottom: 40px;
     
 }
@@ -1013,7 +1023,7 @@ nav {
 .service-card {
     position: relative;
     background-color: #fff;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -1223,7 +1233,7 @@ nav {
 }
 
 .success-stories .story, .services .service, .team .team-member {
-    background: #f4f4f4;
+    background: #ffffff;
     padding: 1em;
     margin: 1em 0;
     border-radius: 8px;
@@ -1233,7 +1243,7 @@ nav {
     animation: fadeInUp 1s ease-in-out forwards;
 }
 .success-stories .story, .services .service, .team  {
-    background: #f4f4f4;
+    background: #ffffff;
     padding: 1em;
     margin: 1em 0;
     border-radius: 8px;
@@ -1307,7 +1317,9 @@ nav {
     background-color: #FF6600;
     color: #fff;
     display: inline-block;
-    padding: 1px 4px;
+    padding: 1px 3px;
+    padding-bottom: 0px;
+    padding-top: 0px;
     border-radius: 5px;
     margin-bottom: 40px;
 }
@@ -1445,7 +1457,7 @@ nav {
 
 .social-icons a:hover {
     color: #ff6600;
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1) translateY(-4px);
 }
 
 /* Footer Line */

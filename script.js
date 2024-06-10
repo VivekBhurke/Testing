@@ -23,7 +23,7 @@ function prevSlide() {
 }
 
 function startAutoSlide() {
-    intervalId = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    intervalId = setInterval(nextSlide, 3000); // Change slide every 5 seconds
 }
 
 function stopAutoSlide() {
