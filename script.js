@@ -23,7 +23,7 @@ function prevSlide() {
 }
 
 function startAutoSlide() {
-    intervalId = setInterval(nextSlide, 3000); // Change slide every 5 seconds
+    intervalId = setInterval(nextSlide, 3000); // Change slide every 3 seconds
 }
 
 function stopAutoSlide() {
@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
