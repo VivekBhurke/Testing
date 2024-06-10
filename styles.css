@@ -648,7 +648,7 @@ nav {
     animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
 }
 .images2 {
-    position: absolute;
+    position: relative;
     top: -20px;
     margin-left: -10rem;
     margin-right: 32rem;
@@ -657,10 +657,10 @@ nav {
     z-index: 0;
 }
 .megaphone-right {
-    position: relative;
-    top: -0.1em;
-    right: 25em;
-    margin-left: 55rem;
+    position: absolute;
+    top: -17em;
+    right: -19em;
+    margin-left: 30rem;
     width: 45em;
     height: auto;
     z-index: -1;
@@ -726,8 +726,8 @@ nav {
     } */
 
     .megaphone-right {
-        margin-top: 2.3rem;
-        left: -2rem;
+        margin-top: -18.3rem;
+        left: -3rem;
         margin-left: 13rem;
         width: 23rem;
         z-index: 1;
@@ -894,8 +894,7 @@ nav {
 }
 
 .learn-more::before {
-    content: '➔';
-    transform: rotate(-45deg);
+    content: '↗';
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -957,13 +956,16 @@ nav {
         align-items: center;
     }
 
+    
     .story {
-        flex: 0 0 90%;
+        flex: 0 0 calc(50% - 20px);
+
         margin: 10px 0;
     }
 
     .success-stories h2 {
         font-size: 1.5em;
+        margin-left: -6em;
     }
 
     .story p {
@@ -1610,7 +1612,10 @@ nav {
         color:gray;
         flex-wrap: wrap;
         margin-top: 3rem;     
-   
+        }
+            .team-section h3{
+                font-size: 1.5em;
+            }
 }
 
 @media (max-width: 480px) {
