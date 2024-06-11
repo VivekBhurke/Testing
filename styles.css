@@ -816,8 +816,8 @@ nav {
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 10rem;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
     padding-bottom: 15px;
     overflow-y: hidden; /* Disable vertical scrollbar */
     overflow-x: hidden; /* Prevent horizontal scroll */
@@ -1564,6 +1564,7 @@ nav {
     .hero-image {
         max-width: 100%;
         margin: 1em 0;
+        
     }
 
     .carousel {
@@ -1655,5 +1656,4 @@ nav {
         font-size: 1.5em;
         margin-top: 1em;
     }
-}
 }
