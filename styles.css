@@ -642,6 +642,8 @@ nav ul li a {
 
 .images1 {
     left: 0;
+    animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
+
 }
 
 .images2 {
@@ -651,6 +653,7 @@ nav ul li a {
 
 .megaphone-left {
     width: 150px;
+    margin-top: -20%;
     animation: moveUpDownLeftMobile 1s infinite alternate ease-in-out, blurEffect 1s infinite alternate ease-in-out;
 }
 
@@ -666,10 +669,12 @@ nav ul li a {
 @media screen and (max-width: 768px) {
     .megaphone-left {
         width: 6rem;
+        margin-top: -2rem;
     }
 
     .megaphone-right {
-        width: 33rem;
+        width: 28rem;
+        margin-right: -3rem;
     }
 
     .section {
