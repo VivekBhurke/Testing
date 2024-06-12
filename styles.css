@@ -304,8 +304,8 @@ nav ul li a {
 }
 
 .text h1 {
-    font-size: 3.5em; /* Adjusted for better readability */
-    font: bold 3.5em 'Montserrat', sans-serif;
+    font-size: 4em; /* Adjusted for better readability */
+    font: bold 3.5em 'Montserrat';
     line-height: 1.2; /* Adjusted line height */
     color: #000000;
     margin-bottom: 2rem; /* Adjusted margin */
@@ -673,7 +673,7 @@ nav ul li a {
     }
 
     .megaphone-right {
-        width: 28rem;
+        width: 25rem;
         margin-right: -3rem;
     }
 
@@ -709,7 +709,7 @@ nav ul li a {
     }
 
     .megaphone-right {
-        width: 25rem;
+        width: 23rem;
     }
 
     .section {
@@ -782,10 +782,11 @@ nav ul li a {
 
 .success-stories h2 {
     position: absolute;
-    background-color: #c85305;
+    background-color: #d5642a;
     color: #fff;
-    padding: 0.5px 6px;
-    border-radius: 5px;
+    padding: 1px 13px; /* Increased horizontal padding for more length */
+    border-radius: 2.5px;
+    line-height: 1.2em; /* Decreased line height for less height */
     font-size: 2em;
     margin-top: 9rem;
     top: -40px; /* Adjust the distance from the top of the .success-stories container */
@@ -958,20 +959,21 @@ nav ul li a {
 .services-section h2 {
     font-size: 3em;
     font-family: 'only_you';
-    margin-bottom: -30px;
+    margin-bottom: -35px;
     color: #000;
 }
 
 .services-section h3 {
-    font-size: 2em;
+    font-size: 1.8em;
     background-color: #FF6600;
     color: #000000;
     display: inline-block;
-    padding: -3px 3px; /* Adjusted padding for better spacing */
-    border-radius: 3px;
+    padding: 1px 12px; /* Increased horizontal padding for more length */
+    border-radius: 2.5px;
+    line-height: 1.2em; /* Decreased line height for less height */
     margin-bottom: 40px;
-    
 }
+
 
 .services-container {
     display: flex;
@@ -1274,11 +1276,11 @@ nav ul li a {
 }
 
 .team-section h3 {
-    font-size: 2em;
+    font-size: 1.8em;
     background-color: #FF6600;
     color: #fff;
     display: inline-block;
-    padding: 1px 3px;
+    padding: 5px 3px;
     padding-bottom: 0px;
     padding-top: 0px;
     border-radius: 5px;
