@@ -14,6 +14,31 @@ html, body {
   scroll-behavior: smooth;
 }
 
+
+/* Reset anchor tag */
+a {
+    color: inherit; /* Inherit color from parent element */
+    text-decoration: none; /* Remove underline */
+    background-color: transparent; /* Remove any background color */
+    cursor: pointer; /* Ensure cursor is pointer */
+    outline: none; /* Remove focus outline */
+    border: none; /* Remove any borders */
+}
+
+/* Additional hover and active states if needed */
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none; /* Keep no underline on hover, focus, and active states */
+    outline: none; /* Ensure no outline on focus */
+}
+
+/* If you want to reset visited state */
+a:visited {
+    color: inherit; /* Ensure visited links don't change color */
+}
+
+
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -187,8 +212,6 @@ html, body {
   font-size: 2rem;
   font-weight: bolder;
   margin-bottom: 0;
- 
-
 }
 
 .intro-description {
@@ -207,24 +230,49 @@ html, body {
 .download-button {
   display: inline-flex;
   align-items: center;
-  background-color: transparent;
-  border: 2px solid #f97316;
+  background: linear-gradient(135deg, #f97316, #ff6600);
+  border: none;
   border-radius: 15px;
   padding: 0.5rem 1.5rem;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  transition: left 0.4s ease;
+}
+
+.download-button:hover::before {
+  left: 100%;
 }
 
 .download-button:hover {
-  background-color: #f97316;
+  background: linear-gradient(135deg, #ff6600, #f97316);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .button-text {
   margin-right: 0.5rem;
   color: #000000;
+  transition: color 0.3s ease;
+}
+
+.button-text:hover {
+  color: #fff;
 }
 
 .button-icon {
@@ -238,7 +286,35 @@ html, body {
   border-radius: 50%;
   font-size: 1rem;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.download-button:hover .button-icon {
+  background-color: #ff6600;
+  transform: rotate(180deg);
+}
+
+/* Add some animations */
+@keyframes shimmer {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.download-button::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
+
 
 .orange-line {
   border: none;
@@ -256,9 +332,23 @@ html, body {
   animation: fadeInImage 2s forwards;
 }
 
-@keyframes fadeInImage {
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
   to {
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -293,6 +383,11 @@ html, body {
   }
 }
 
+@keyframes fadeInImage {
+  to {
+      opacity: 1;
+  }
+}
 @media (min-width: 1024px) {
   .intro {
     padding: 5rem 10rem;
@@ -433,11 +528,13 @@ max-width: 80%; / Adjust for smaller screens */
   padding: 0 1.5rem;
   z-index: -1;
 }
-
+.promo-content{
+  margin-bottom: 2rem;
+}
 .promo-title {
   position: relative;
   font-size: 3em; /* Adjust as needed */
-  line-height: 1.2;
+  line-height: 1.1;
   margin-top: -2.5em;
   text-align: center; /* Center align the text */
   margin-left: 5.5em;
@@ -509,80 +606,186 @@ max-width: 80%; / Adjust for smaller screens */
   height: 3px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-  /* Contact section styles */
-  .contact {
-    padding: 4rem 1.5rem;
-    background: url('img/wave.png') no-repeat center center/cover;
-    text-align: center;
-  }
-  
-  .contact-us {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Light overlay for better text readability */
-    border-radius: 10px;
-    display: inline-block;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    color: #000000;
-  }
-  
-  .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5em;
-    gap: 40px;
-  }
-  .contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 20px;
-    
+.f-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
 }
-  
-  .icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 1rem;
-    color: #FF6600;
-    font-size: 40px;
-    z-index: 1;
-  }
-  
-  .divider {
-    height: 40px;
-    width: 2px;
-    background-color: #FF6600;
-    align-self: center;
-  }
-  
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-      justify-content: space-around;
-      gap: 0;
-      margin-left: 0;
-      margin-bottom: -8rem;
-    }
-  
-    .divider {
-      height: 2px;
-      width: 80%;
-      align-self: center;
-      margin-bottom: 5px;
-    }
-    .icon{
-      margin-top: 1rem;
-      font-size: 2rem;
-    }
-    .horizontal-line {
-      margin-bottom: -2rem;
-    }
+
+.faq-form {
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.faq-form h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+.faq-form input,
+.faq-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid orange;
+  border-radius: 15px;
+  font-size: 16px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.faq-form textarea {
+  height: 100px; /* Adjust height as needed */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.faq-form button {
+  width: 20%;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  animation: slideInFromRight 1s ease-in-out;
+}
+
+.faq-form button:hover {
+  background-color: darkorange;
+}
+
+.orange-line2 {
+  width: 100%;
+  height: 3px;
+  background-color: #ff6600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+.profile-info p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: gray;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+.separator {
+  width: 40px;
+  height: 3px;
+  background-color: #ff6600;
+  margin: 0 auto 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #ff6600;
+  font-size: 20px;
+  text-decoration: none;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.vertical-separator {
+  width: 80%;
+  height: 2px;
+  background-color: #f86b00;
+  margin: 20px 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-item i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.contact-item span {
+  font-size: 16px;
+}
+
+.textarea {
+  font-family: 'Monsterrat';
+}
+
+@media (min-width: 768px) {
+  .f-container {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
+  .faq-form,
+  .profile-card {
+    width: 48%;
+  }
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
